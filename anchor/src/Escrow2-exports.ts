@@ -20,8 +20,7 @@ export function getEscrow2ProgramId(cluster: Cluster) {
   switch (cluster) {
     case 'devnet':
     case 'testnet':
-      // This is the program ID for the Escrow2 program on devnet and testnet.
-      return new PublicKey('coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF')
+      
     case 'mainnet-beta':
     default:
       return ESCROW2_PROGRAM_ID
