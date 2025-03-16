@@ -7,12 +7,14 @@ skip-lint = false
 
 [programs.localnet]
 Escrow2 = "3TtB9jzAJviaVpSdTqp5tnvN7HZPKQQRrzpr7RriSUiH"
+[programs.Devnet]
+Escrow2 = "3TtB9jzAJviaVpSdTqp5tnvN7HZPKQQRrzpr7RriSUiH"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

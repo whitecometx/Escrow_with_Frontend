@@ -45,7 +45,7 @@ export function useEscrow2Program() {
           provider.publicKey,);
         
         const [escrow] = PublicKey.findProgramAddressSync(
-              [Buffer.from("escrow"), provider.publicKey.toBuffer(), seed.toBuffer('le', 8)],
+              [Buffer.from("escrow"), provider.publicKey.toBuffer(), seed.toArrayLike(Buffer, 'le', 8)],
               program.programId
             );
         const vault = getAssociatedTokenAddressSync(
@@ -75,7 +75,7 @@ export function useEscrow2Program() {
     },
     onError: () => toast.error('Failed to initialize account'),
   })
-  const takemutation = useMutation({
+  /* const takemutation = useMutation({
     mutationKey: ['Escrow2', 'take', { cluster }],
     mutationFn: async(keypair: Keypair) =>
       { const seed = new BN(1);
@@ -119,13 +119,14 @@ export function useEscrow2Program() {
       return accounts.refetch()
     },
     onError: () => toast.error('Failed to initialize account'),
-  }) 
+  })  */
   return {
     program,
     programId,
     accounts,
     getProgramAccount,
     initialize,
+    //takemutation
   }
 }
   export function useEscrow2ProgramAccount({ account }: { account: PublicKey }) {
